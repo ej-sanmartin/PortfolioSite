@@ -1,20 +1,12 @@
 import React, { Component } from "react";
-import logoImage from "../images/logo-min.jpg";
-import { Image, responsive, Grid, Row, Col, circle } from "react-bootstrap";
 import {
   Collapse,
-  Container,
-  Jumbotron,
   Navbar,
   NavbarToggler,
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem } from 'reactstrap';
+  NavLink } from 'reactstrap';
 
 export default class Navigation extends Component {
   constructor(props) {
@@ -22,57 +14,45 @@ export default class Navigation extends Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      isOpen: false
+      isOpen: false,
     };
   }
 
   toggle() {
     this.setState({
-      isOpen: !this.state.isOpen
+      isOpen: !this.state.isOpen,
     });
   }
 
   render() {
-    const navStyle = {
-      display: "inline-block",
-      width: "100%"
-    }
+    const navbarDeco = {
+      borderBottom: "solid #61099b .01em",
+      zIndex: "1",
+    };
+    const logo = {
+      height: "100%",
+      zIndex: "1",
+    };
 
     return (
-      <div className="clearfix">
-        <Jumbotron fluid>
-          <Container fluid>
-              <Row>
-                <Navbar className="float-left" color="faded" light expand="md" style={navStyle}>
-                  <Col xs={6} md={3}>
-                    <NavLink href="/"><Image style={{maxHeight: "100px"}} src={logoImage} alt="Logo" circle responsive /></NavLink>
-                  </Col>
-                  <Col xs={6} md={9}>
-                    <NavbarToggler onClick={this.toggle} />
-                    <Collapse isOpen={this.state.isOpen} navbar>
-                      <Nav className="ml-auto" navbar>
-                        <Col md={3}>
-                          <NavItem>
-                            <NavLink href="/projects">Projects</NavLink>
-                          </NavItem>
-                        </Col>
-                        <Col md={3}>
-                          <NavItem>
-                            <NavLink href="/about">About</NavLink>
-                          </NavItem>
-                        </Col>
-                        <Col md={3}>
-                          <NavItem>
-                            <NavLink href="/contact">Contact</NavLink>
-                          </NavItem>
-                        </Col>
-                      </Nav>
-                    </Collapse>
-                  </Col>
-                </Navbar>
-              </Row>
-          </Container>
-        </Jumbotron>
+      <div style={navbarDeco} >
+        <Navbar color="faded" expand="md">
+          <NavbarBrand href="/">Edgar</NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink href="/projects">Projects</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/about">About</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/contact">Contact</NavLink>
+              </NavItem>
+            </Nav>
+          </Collapse>
+        </Navbar>
       </div>
     );
   }
