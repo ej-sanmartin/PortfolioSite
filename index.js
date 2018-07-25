@@ -8,6 +8,24 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.use((request, response, next) => {
+  response.header("Access-Control-Allow-Origin", "*");
+  response.header("Access-Control-Allow-Headers", "Content-Type");
+  next();
+});
+
+if (process.env.NODE_ENV === 'production') {
+  // Exprees will serve up production assets
+  app.use(express.static('client/build'));
+
+
+  // Express serve up index.html file if it doesn't recognize route
+  const path = require('path');
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
+
 // POST request with nodemailer to send contact form to email
 app.post("/send", (req, res) => {
   const output = `
@@ -25,13 +43,12 @@ app.post("/send", (req, res) => {
 
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
-    host: 'smtp-relay.gmail.com',
-    port: 587,
+    service: "gmail",
     secure: false, // true for 465, false for other ports
     auth: {
       // Remember to add email endpoint
-      user: '#',
-      pass: '#'
+      user: '*',
+      pass: '*'
     },
     tls: {
       rejectUnauthorized: false
@@ -43,6 +60,7 @@ app.post("/send", (req, res) => {
     from: '"Contact Request" <esanmartinjr@fordham.edu>', // sender address
     to: 'esanmartinjr@fordham.edu', // list of receivers
     subject: 'Contact Request from your site', // Subject line
+    text: req.body.message, // plain text body
     html: output // html body
   };
 
@@ -51,10 +69,11 @@ app.post("/send", (req, res) => {
     if(error) {
       return console.log(error);
     }
-    console.log('Message sent: %s', info.messageId);
-    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+    console.log(info);
   });
 });
 
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`)
+});
