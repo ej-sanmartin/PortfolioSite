@@ -1,9 +1,9 @@
 import React from "react";
-import FormikApp from "../components/FormikApp";
-import { Container } from "reactstrap"
+import ContactForm from "../components/ContactForm";
+import { Container } from "reactstrap";
 
 export default () => (
   <Container>
-    <FormikApp />
+    <ContactForm />
   </Container>
 );
