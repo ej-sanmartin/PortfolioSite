@@ -79,7 +79,7 @@ export default class About extends Component {
         <Row>
           {sewingCards}
         </Row>
-        <p>I am currently working on an ecommerce site to sell my plush dolls!</p>
+        <p>Will be working on an ecommerce site to sell my handmade plush dolls!</p>
         <br />
       </Container>
     );
