@@ -1,21 +1,32 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardText, CardBody,
-  CardTitle, Button } from 'reactstrap';
+import { Card,
+         CardImg,
+         CardText,
+         CardBody,
+         CardTitle,
+         Button } from 'reactstrap';
 
 export default class ProjectCards extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
+    const cardShadow = {
+      WebkitBoxShadow: "2px 2px 12px -1px rgba(0,0,0,0.35)",
+      MozBoxShadow: "2px 2px 12px -1px rgba(0,0,0,0.35)",
+      boxShadow: "2px 2px 12px -1px rgba(0,0,0,0.35)",
+    };
+
+    const buttonStyle = {
+      background: "#BF84D4",
+      border: "white"
+    }
+
     return (
       <div>
-        <Card>
+        <Card style={cardShadow}>
           <CardImg top width="100%" src={this.props.project.image} alt={this.props.project.alt} />
           <CardBody>
-            <CardTitle>{this.props.project.title}</CardTitle>
+            <CardTitle style={{ marginBottom: ".25em", borderBottom: "solid #BF84D4 1px" }}>{this.props.project.title}</CardTitle>
             <CardText>{this.props.project.description}</CardText>
-            <Button><a href={this.props.project.link} target="_blank" rel="noopener noreferrer">Source Code</a></Button>
+            <Button style={buttonStyle}><a style={{ color: "white" }} href={this.props.project.link} target="_blank" rel="noopener noreferrer">Source Code</a></Button>
           </CardBody>
         </Card>
       </div>

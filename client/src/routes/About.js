@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import MusicCards from "../components/MusicCards";
 import SewingCards from "../components/SewingCards";
-import minkyCover from "../images/minky_album_cover-min.jpg";
-import songadayCover from "../images/song_a_day_album_cover-min.jpg";
-import avocadoPlushie from "../images/avocado_plushie-min.jpg";
-import eggPlushie from "../images/egg_plushie-min.jpg";
+import YoutubeCards from "../components/YoutubeCards";
 import { Container, Row, Col } from "reactstrap";
+
+// setting paths to images
+const minkyCover = require("../images/minky_album_cover-min.jpg");
+const songadayCover = require("../images/song_a_day_album_cover-min.jpg");
+const avocadoPlushie = require("../images/avocado_plushie-min.jpg");
+const eggPlushie = require("../images/egg_plushie-min.jpg");
+const youtubeVideoFirstVideo = require("../images/edgar_youtube_my_stoftware_developer_story-min.png");
 
 export default class About extends Component {
   constructor() {
@@ -13,7 +17,7 @@ export default class About extends Component {
     this.state = {
       music: [
         {
-          cover: {minkyCover},
+          cover: minkyCover,
           alt: "Minky Album Cover",
           album: "Minky",
           date: "April 2018",
@@ -21,7 +25,7 @@ export default class About extends Component {
           link: "https://edgarhawkins.bandcamp.com/album/minky"
         },
         {
-          cover: {songadayCover},
+          cover: songadayCover,
           alt: "Song a Day: Year 1 Album Cover",
           album: "Song a Day: Year 1",
           date: "2015",
@@ -31,56 +35,101 @@ export default class About extends Component {
       ],
       sewing: [
         {
-          image: {avocadoPlushie},
+          image: avocadoPlushie,
           alt: "Avocado Plushie",
           title: "Avocado",
-          description: "First plush doll made. Hand sewn winter-fleece and felt. Face hot glued. Polyster fiber filling."
+          description: "First plush doll made. Hand sewn winter-fleece and felt. Face hot glued. Polyester fiber filling."
         },
         {
-          image: {eggPlushie},
+          image: eggPlushie,
           alt: "Egg Plushie",
           title: "Egg",
-          description: "Hand sewn winter-fleece and felt. Polyster fiber filling."
+          description: "Hand sewn winter-fleece and felt. Polyester fiber filling."
         }
-      ]
-    }
+      ],
+      video: [
+        {
+          image: youtubeVideoFirstVideo,
+          alt: "Youtube Thumbnail for 'My Software Developer story'",
+          title: "Hello World! | My Software Developer Story (so far)",
+          description: "Here's my first video on youtube describing myself and my journey so far to becoming a software developer. More to come.",
+          link: "https://www.youtube.com/watch?v=w0jqdUuJGTs"
+        }
+      ],
+    };
   }
 
   render() {
-    let musicCards = this.state.music.map(music => {
+    const wrapper = {
+      margin: "auto",
+      marginTop: "1em"
+    };
+
+    const bioStyle = {
+      textAlign: "center",
+      marginTop: "0.5em",
+      marginBottom: "0.5em"
+    };
+
+    let musicCards = this.state.music.map((music, i) => {
       return (
-        <Col sm="6">
+        <Col sm="5" style={wrapper} key={i}>
           <MusicCards music={music} />
         </Col>
-      )
+      );
     });
 
-    let sewingCards = this.state.sewing.map(sewing => {
+    let sewingCards = this.state.sewing.map((sewing, i) => {
       return (
-        <Col sm="6">
+        <Col sm="5" style={wrapper} key={i}>
           <SewingCards sewing={sewing} />
         </Col>
-      )
+      );
+    });
+
+    let youtubeCards = this.state.video.map((video, i) => {
+      return (
+        <Col sm="6" style={wrapper} key={i}>
+          <YoutubeCards video={video} />
+        </Col>
+      );
     });
 
     return (
       <Container>
         <div>
-          <h1>About Me</h1>
-          <p>Proud Peruvian from CT, now living in NYC. React-Redux Fullstack Developer. Also, am diving into Machine Learning and AI with Python.</p>
-          <p>I am a life long learner.</p>
-          <p>Gonna Google me? I already did that for you! Below are some of the non-technical projects I do that you could find on the web.</p>
+          <h1 style={{ marginTop: ".5em",
+                       marginBottom: ".25em" }}>
+            About Me
+          </h1>
+          <p style={bioStyle}>Proud Peruvian from CT, now living in NYC. React Fullstack Developer. Also, not afraid to dabble with a multitude of technologies, such as mobile development, game development, blockchain, and machine learning.</p>
+          <p style={bioStyle}>Gonna Google me? I already did that for you! Below are some of the non-technical projects I do that you could find on the web.</p>
         </div>
-        <h3>Music</h3>
+        <h3 style={{marginTop: "0.5em"}}>Music</h3>
         <Row>
           {musicCards}
         </Row>
-        <h3>Sewing</h3>
+        <p style={{textAlign: "center",
+                   marginTop: "2em"}}>
+          I am passionate about music and singing. And I love writing songs. You can always find me humming or posting a cover on my instagram when I am not writing a song. My songs can be found <a style={{ color: "#BF84D4" }} href="https://edgarhawkins.bandcamp.com/" target="_blank" rel="noopener noreferrer">here</a>.
+        </p>
+        <h3 style={{marginTop: "2em"}}>Sewing</h3>
         <Row>
           {sewingCards}
         </Row>
-        <p>Will be working on an ecommerce site to sell my handmade plush dolls!</p>
-        <br />
+        <p style={{textAlign: "center",
+                   marginTop: "2em"}}>
+          A calm and relaxing passtime. Soon, I plan on building an ecommerce site to sell my handmade plush dolls!
+        </p>
+        <h3 style={{marginTop: "2em"}}>YouTube</h3>
+        <Row>
+          {youtubeCards}
+        </Row>
+        <p style={{textAlign: "center",
+                   marginTop: "2em",
+                   marginBottom: "2em"}}>
+          Recently started a youtube channel to vlog about my life as a software developer. I will create content to share my life experiences, advices, and to demystify the technical aspects of progamming through tutorials.
+        </p>
       </Container>
     );
   }
