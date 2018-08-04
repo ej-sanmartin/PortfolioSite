@@ -65,10 +65,11 @@ export default class About extends Component {
       marginTop: "1em"
     };
 
-    const bioStyle = {
+    const descriptionStyle = {
       textAlign: "center",
-      marginTop: "0.5em",
-      marginBottom: "0.5em"
+      marginTop: "2em",
+      background: "#F5E3FB",
+      padding: "0.5em"
     };
 
     let musicCards = this.state.music.map((music, i) => {
@@ -102,32 +103,30 @@ export default class About extends Component {
                        marginBottom: ".25em" }}>
             About Me
           </h1>
-          <p style={bioStyle}>Proud Peruvian from CT, now living in NYC. React Fullstack Developer. Also, not afraid to dabble with a multitude of technologies, such as mobile development, game development, blockchain, and machine learning.</p>
-          <p style={bioStyle}>Gonna Google me? I already did that for you! Below are some of the non-technical projects I do that you could find on the web.</p>
+          <div style={descriptionStyle}>
+            <p>Proud Peruvian from CT, now living in NYC. React Fullstack Developer. Also, not afraid to dabble with a multitude of technologies, such as mobile development, game development, blockchain, and machine learning.</p>
+            <p>Gonna Google me? I already did that for you! Below are some of the non-technical projects I do that you could find on the web.</p>
+          </div>
         </div>
-        <h3 style={{marginTop: "0.5em"}}>Music</h3>
+        <h3 style={{marginTop: "0.5em", fontWeight: "bold" }}>Music</h3>
         <Row>
           {musicCards}
         </Row>
-        <p style={{textAlign: "center",
-                   marginTop: "2em"}}>
+        <p style={descriptionStyle}>
           I am passionate about music and singing. And I love writing songs. You can always find me humming or posting a cover on my instagram when I am not writing a song. My songs can be found <a style={{ color: "#BF84D4" }} href="https://edgarhawkins.bandcamp.com/" target="_blank" rel="noopener noreferrer">here</a>.
         </p>
-        <h3 style={{marginTop: "2em"}}>Sewing</h3>
+        <h3 style={{marginTop: "2em", fontWeight: "bold" }}>Sewing</h3>
         <Row>
           {sewingCards}
         </Row>
-        <p style={{textAlign: "center",
-                   marginTop: "2em"}}>
+        <p style={descriptionStyle}>
           A calm and relaxing passtime. Soon, I plan on building an ecommerce site to sell my handmade plush dolls!
         </p>
-        <h3 style={{marginTop: "2em"}}>YouTube</h3>
+        <h3 style={{marginTop: "2em", fontWeight: "bold" }}>YouTube</h3>
         <Row>
           {youtubeCards}
         </Row>
-        <p style={{textAlign: "center",
-                   marginTop: "2em",
-                   marginBottom: "2em"}}>
+        <p style={descriptionStyle}>
           Recently started a youtube channel to vlog about my life as a software developer. I will create content to share my life experiences, advices, and to demystify the technical aspects of progamming through tutorials.
         </p>
       </Container>

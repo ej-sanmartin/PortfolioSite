@@ -37,7 +37,7 @@ export default class Contact extends Component {
                           display: "block",
                           margin: "0 auto" }}
                   src={withLandon}
-                  alt="Picture with my baby nephew, Landon" />
+                  alt="With my baby nephew, Landon" />
             <p style={{ textAlign: "center",
                         fontSize: "0.75em",
                         marginTop: ".5em" }}>

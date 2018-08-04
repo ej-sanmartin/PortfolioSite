@@ -13,6 +13,8 @@ export default class Home extends Component {
     const sizeDown = {
       top: "4.2em",
       margin: "auto",
+      minHeight: "300px",
+      minWidth: "250px",
       maxHeight: "67%",
       maxWidth: "33.5%",
       WebkitBoxShadow: "2px 2px 12px -1px rgba(0,0,0,0.35)",

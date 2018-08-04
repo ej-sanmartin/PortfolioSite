@@ -21,7 +21,7 @@ export default class YoutubeCards extends Component {
 
     return (
       <div>
-        <Card style={cardShadow}>
+        <Card className="grow" style={cardShadow}>
           <CardImg top width="100%" src={this.props.video.image} alt={this.props.video.alt} />
           <CardBody>
             <CardTitle style={{ marginBottom: ".25em", borderBottom: "solid #BF84D4 1px" }}>{this.props.video.title}</CardTitle>

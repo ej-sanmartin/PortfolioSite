@@ -3,3 +3,11 @@ body {
   font-weight: 400;
   color: #2b2b2b;
 }
+
+.grow:hover {
+  transform: scale(1.01);
+}
+
+.grow-icons:hover {
+  transform: scale(1.05);
+}

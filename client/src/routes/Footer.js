@@ -36,11 +36,11 @@ export default class Footer extends Component {
             <p style={copyrightStyle}>© {(new Date().getFullYear())} Edgar Jr San Martin. All rights reserved.</p>
           </div>
           <div>
-            <SocialIcon style={icons} url="https://github.com/ej-sanmartin" color="#F5E3FB" />
-            <SocialIcon style={icons} url="https://www.linkedin.com/in/edgar-jr-san-martin/" color="#F5E3FB" />
-            <SocialIcon style={icons} url="https://www.youtube.com/channel/UC_JqyD1Kseb0-e8Q9HWRMdQ" color="#F5E3FB" />
-            <SocialIcon style={icons} url="https://codepen.io/ej-sanmartin/" color="#F5E3FB" />
-            <SocialIcon style={icons} url="https://www.instagram.com/ej_sanmartin/" color="#F5E3FB" />
+            <SocialIcon className="grow-icons" style={icons} url="https://github.com/ej-sanmartin" color="#F5E3FB" />
+            <SocialIcon className="grow-icons" style={icons} url="https://www.linkedin.com/in/edgar-jr-san-martin/" color="#F5E3FB" />
+            <SocialIcon className="grow-icons" style={icons} url="https://www.youtube.com/channel/UC_JqyD1Kseb0-e8Q9HWRMdQ" color="#F5E3FB" />
+            <SocialIcon className="grow-icons" style={icons} url="https://codepen.io/ej-sanmartin/" color="#F5E3FB" />
+            <SocialIcon className="grow-icons" style={icons} url="https://www.instagram.com/ej_sanmartin/" color="#F5E3FB" />
           </div>
         </Row>
       </div>

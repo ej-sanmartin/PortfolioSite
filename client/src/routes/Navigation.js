@@ -17,13 +17,16 @@ export default class Navigation extends Component {
         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
             <li className="nav-item">
-              <a className="nav-link" href="/projects">Projects</a>
+              <a className="nav-link" href="/">Home</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/about">About</a>
+              <a className="nav-link" href="/#/projects">Projects</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/contact">Contact</a>
+              <a className="nav-link" href="/#/about">About</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/#/contact">Contact</a>
             </li>
           </ul>
         </div>

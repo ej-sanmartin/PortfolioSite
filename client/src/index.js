@@ -5,6 +5,7 @@ import registerServiceWorker from './registerServiceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./index.css";
 import WebFont from "webfontloader";
+import Favicon from "react-favicon";
 
 WebFont.load({
   google: {
@@ -12,5 +13,10 @@ WebFont.load({
   }
 });
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <div>
+    <Favicon url="https://raw.githubusercontent.com/ej-sanmartin/PortfolioSite/master/client/public/favicon.ico" />
+    <App />
+  </div>
+, document.getElementById('root'));
 registerServiceWorker();

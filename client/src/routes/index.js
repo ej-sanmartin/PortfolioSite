@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 
 import Navigation from "./Navigation";
 import Home from "./Home";
@@ -10,7 +10,7 @@ import Error from "./Error";
 import Footer from "./Footer";
 
 export default () => (
-  <BrowserRouter>
+  <HashRouter>
     <div>
       <Navigation />
       <Switch>
@@ -24,5 +24,5 @@ export default () => (
         <Footer />
       </div>
     </div>
-  </BrowserRouter>
+  </HashRouter>
 );

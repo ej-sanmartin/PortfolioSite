@@ -22,7 +22,7 @@ export default class MusicCards extends Component {
 
     return (
       <div>
-        <Card style={cardShadow}>
+        <Card className="grow" style={cardShadow}>
           <CardImg top width="100%" src={this.props.music.cover} alt={this.props.music.alt} />
           <CardBody>
             <CardTitle style={{ marginBottom: ".5em", borderBottom: "solid #BF84D4 1px" }}>{this.props.music.album}</CardTitle>

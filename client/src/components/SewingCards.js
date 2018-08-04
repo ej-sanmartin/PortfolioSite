@@ -15,7 +15,7 @@ export default class SewingCards extends Component {
 
     return (
       <div>
-        <Card style={cardShadow}>
+        <Card className="grow" style={cardShadow}>
           <CardImg top width="100%" src={this.props.sewing.image} alt={this.props.sewing.alt} />
           <CardBody>
             <CardTitle style={{ marginBottom: ".25em", borderBottom: "solid #BF84D4 1px" }}>{this.props.sewing.title}</CardTitle>

@@ -3,7 +3,7 @@ import ProjectCards from "../components/ProjectCards";
 import { Container, Col, Row } from "reactstrap";
 
 // setting path to images
-const portfolioSite = require("../images/portfolio-site-homepage-min.png");
+const portfolioSite = require("../images/portfolio_site-min.png");
 const necesitoApp = require("../images/necesito_app-min.png");
 const iphoneButton = require("../images/iphone_switch-min.png");
 const stitchCSSImage = require("../images/stitch-min.png");
@@ -43,14 +43,14 @@ export default class Projects extends Component {
           alt: "iPhone Button Swtich Turned On",
           title: "iPhone Button Recreation",
           description: "Recreated the iPhone switch button that you can, now, play with on your web browser of choice.",
-          link: "https://github.com/ej-sanmartin/iPhone-Button"
+          link: "https://codepen.io/ej-sanmartin/pen/djoLBP"
         },
         {
           image: stitchCSSImage,
           alt: "Stitch CSS Image",
           title: "Stitch CSS Image",
           description: "Using pure CSS and SASS, created an image of the beloved Disney Character, Stitch. I create images in CSS to gain a better grasp and comfort in the language.",
-          link: "https://github.com/ej-sanmartin/Stitch"
+          link: "https://codepen.io/ej-sanmartin/pen/RBbrbK"
         },
         {
           image: coinSpin,
@@ -105,7 +105,9 @@ export default class Projects extends Component {
       <Container>
         <h1 style={{ marginTop: "0.5em" }}>Projects</h1>
         <div style={{ marginLeft: "3%",
-                      marginRight: "3%" }}>
+                      marginRight: "3%",
+                      background: "#F5E3FB",
+                      padding: "0.5em" }}>
           <h3 style={{ marginBottom: ".25em" }}>
             Skills
           </h3>
