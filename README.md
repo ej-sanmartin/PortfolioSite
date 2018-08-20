@@ -24,42 +24,22 @@ would look like. I'm not the best drawer and I wish I had the money for Photosho
 in creating a simple site that I would love. I, also, researched into NPM packages I could use to help with my site. What I found
 included React-Router, Nodemailer, Concurrently, Formik, React-Social-Icons, Reactstrap, and React-bootstrap.
 
-3. End of May - Now(July): Finally being out of collage, I went straight to work. Started with creating the file structure
+3. End of May - July: Finally being out of collage, I went straight to work. Started with creating the file structure
 to keep everything organized and logical, I then went to creating all the routes and making sure they worked properly. Once that
 was clear, I added static JSX to all the routes and the components they possessed to get exactly what I wanted displayed. After, this,
 I made them more dynamic and have the ability to pass and take states and props for scalability. Then I had worked on the "/contact"
 part of the site which consisted of a form. I spent about a week or so on this portion and decided to just leave it presentable
 and work on having it be functioning to later to not waste time. I spent a day setting up express and nodemailer so that when
 the form was ready it could send the contact information of a user to my email address. Also set up concurrently and spent about a
-week with styling with Reactstrap and react-bootstrap, as well as creating custom css stylings. Still working on that. You can
-see what I have left for this site on the "Current Challenges" section of this README file.
+week with styling with Reactstrap and react-bootstrap, as well as creating custom css stylings.
+
+4. Beginning of August: Configured my project to be able to be properly deployed on Heroku. Also, set up a GoDaddy domain name. It was a surprisingly long process.
 
 Overall, despite the difficulties and long days, I have had an incredibly fun and transformatting time working on this site. This
 project had sharpen my developer skills and helped me understand the creation of a site from start to finish and all the pitfalls
 and flexibility experienced and needed to complete such a task.
 
-
-Current Challenges
------------------------
-I have not deployed this site yet but I am working hard to get the site to my liking. These are the current obstacles I am
-facing:
-
-1. Laying out the site with CSS. Also, I am trying to get the site to be responsive and the problem seems to be with the images
-and having them fit to screen and not effect the layout.
-
-2. Fixing the "/contact" route. Currently using FormikJs to streamline the React form process but am facing problems with its
-presentation on the site. Also need to have axios send a POST request to the backend of this site so that the form could be
-properly submitted. I made a stack overflow question detailing this issue [here](https://stackoverflow.com/questions/51099439/reactjs-using-formik-to-write-a-form-with-axios)
-
-3. With the "/about" and "/projects" tags, the images are not displaying. The source code does include a file with the images
-so I have been trying to add a path to these images within the the components constructor method. The paths seem to be wrong,
-whether I define them into the state object or defined them within a variable that is put into the state object.
-
-4. Having the "Footer" component stick to the bottom of the page, whether the site was being seen on a desktop or on a mobile device.
-Needs to not overlap any other component on the page. Looking into media queries with React.
-
-5. Double check package.json. Specifically, making sure to set up a proxy from the client folder to communicate with the backend side as well
-as other configurations with the help up ConcurrentlyJs and to make sure it is set up properly.
+Site could be viewed [here](www.edgars.life)
 
 
 Future Improvements
@@ -75,6 +55,10 @@ maintaining the site in the future and the messiness does bother me so I plan to
 
 3. Add Google Analytics and perhaps other analtyical tools so I could keep track of traffic on my site. I could, also, use this
 data to change and improve my site to improve user retention the performance speed of my site.
+
+4. Add a contact form to the "/contact" route to make it easier for visitors to send me their contact information.
+
+5. Set up a backend so their could be routing that does not rely on the hack-y hashes that result in ugly urls. The best solution seems to involve using isomorphic javascript.
 
 
 Author/ Contributions
