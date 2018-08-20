@@ -39,7 +39,7 @@ Overall, despite the difficulties and long days, I have had an incredibly fun an
 project had sharpen my developer skills and helped me understand the creation of a site from start to finish and all the pitfalls
 and flexibility experienced and needed to complete such a task.
 
-Site could be viewed [here](www.edgars.life)
+Site could be viewed [here](http://www.edgars.life)
 
 
 Future Improvements
