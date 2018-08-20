@@ -5,6 +5,7 @@ import { Container, Col, Row } from "reactstrap";
 // setting path to images
 const portfolioSite = require("../images/portfolio_site-min.png");
 const necesitoApp = require("../images/necesito_app-min.png");
+const nycMemoryMap = require("../images/memory_map-min.png");
 const iphoneButton = require("../images/iphone_switch-min.png");
 const stitchCSSImage = require("../images/stitch-min.png");
 const upperEatsSide = require("../images/upper_eats_side-min.png");
@@ -32,11 +33,11 @@ export default class Projects extends Component {
           link: "https://codepen.io/ej-sanmartin/pen/XBZrOZ"
         },
         {
-          image: actionAuctions,
-          alt: "Action Auctions Logo",
-          title: "Action Auctions",
-          description: "A product and Grand Prize Winner of the 'Blockchain for Peace' 2018 Hackathon, this philanthropic platform aims to raise funds for charities. Worked on creating a smart contract in Solidity to enable secure transactions with Ethereum. Loved the people I worked with and was able to take a deep dive into blockchain tehnology.",
-          link: "https://github.com/freyaryd/ActionAuctions"
+          image: nycMemoryMap,
+          alt: "NYC Memory Map Page",
+          title: "NYC Memory Map",
+          description: "A static web page created so that I could play around with a geomap API and display places in NYC that have great importance to me. Basically, my love letter to NYC. Set up a small PHP file in order to deploy properly to Heroku.",
+          link: "https://ues-memory-map.herokuapp.com/index.html"
         },
         {
           image: iphoneButton,
@@ -58,6 +59,13 @@ export default class Projects extends Component {
           title: "Spinning Coin",
           description: "Experimenting with keyframes, animations, and 3D CSS by creating a spinning coin. I love the potential applications that 3D CSS has.",
           link: "https://codepen.io/ej-sanmartin/pen/QBmoQd"
+        },
+        {
+          image: actionAuctions,
+          alt: "Action Auctions Logo",
+          title: "Action Auctions",
+          description: "A product and Grand Prize Winner of the 'Blockchain for Peace' 2018 Hackathon, this philanthropic platform aims to raise funds for charities. Worked on creating a smart contract in Solidity to enable secure transactions with Ethereum. Loved the people I worked with and was able to take a deep dive into blockchain tehnology.",
+          link: "https://github.com/freyaryd/ActionAuctions"
         },
         {
           image: necesitoApp,
